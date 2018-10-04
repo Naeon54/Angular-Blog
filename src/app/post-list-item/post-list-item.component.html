@@ -1,0 +1,18 @@
+
+<mat-card [ngClass]="{'card': true,
+'card-green': postLove > 0,
+'card-red': postLove < 0}">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{ postTitle }} - Nb Love : {{ postLove }}</mat-card-title>
+    <mat-card-subtitle>Date : {{ postDate | date: 'short'  }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>{{ postContent }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="like()"><mat-icon>thumb_up_alt</mat-icon> Love It</button>
+    <button mat-button (click)="dislike()"><mat-icon>thumb_down_alt</mat-icon> Don't Love It</button>
+  </mat-card-actions>
+</mat-card>
